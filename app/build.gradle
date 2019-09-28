@@ -58,8 +58,6 @@ dependencies {
     //Lifecycle & ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:${rootProject.lifecycle}"
     implementation "androidx.fragment:fragment-ktx:${rootProject.corektx}"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     kapt "androidx.lifecycle:lifecycle-compiler:${rootProject.lifecycle}"
 
     //Room

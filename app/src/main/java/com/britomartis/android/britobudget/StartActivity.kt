@@ -1,17 +1,13 @@
 package com.britomartis.android.britobudget
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.text.Layout
-import android.view.Menu
-import android.view.MenuItem
+import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
-import android.content.Intent
-import android.net.Uri
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_start.*
 
 class StartActivity : AppCompatActivity() {
@@ -22,12 +18,12 @@ class StartActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
         //declare the animation
-        val ttp = AnimationUtils.loadAnimation(this, R.anim.ttp);
-        val ttb = AnimationUtils.loadAnimation(this, R.anim.ttb);
+        val ttp = AnimationUtils.loadAnimation(this, R.anim.ttp)
+        val ttb = AnimationUtils.loadAnimation(this, R.anim.ttb)
 
-        val headertitle = findViewById(R.id.tite) as TextView
-        val headerimage = findViewById(R.id.exit) as ImageView
-        val sideimage = findViewById(R.id.slide) as ImageView
+        val headertitle = findViewById<TextView>(R.id.tite)
+        val headerimage = findViewById<ImageView>(R.id.exit)
+        val sideimage = findViewById<ImageView>(R.id.slide)
 
         //set the animation
 
@@ -55,7 +51,7 @@ class StartActivity : AppCompatActivity() {
 
         exit.setOnClickListener { System.exit(-1) }
 
-        chat.setOnClickListener{
+        chat.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
