@@ -5,9 +5,14 @@
     <string name="no_response_from_bot">Sorry, I could not understand that</string>
     <string name="no_network">Oops! I can\'t connect to the internet, Please check your connection.</string>
     <string name="username_pref_key">USERNAME_PREF_KEY</string>
+    <string name="user_logged_in">USER LOGGED IN</string>
 
     <string name="chatbot_action_user_has_no_name">__@NOTICE_USER HAS NO NAME__</string>
     <string name="chatbot_defaultreply_what_is_your_name">Oh bummer! I don\'t seem to have your name. What do I call you?</string>
     <string name="chatbot_defaultreplacement_no_local_username">Guest</string>
     <string name="chatbot_defaultreply_first_hello">Hello there! My name is BritoBot, I am your personal daily &lt;b&gt;news&lt;/b&gt; curator for &lt;b&gt;HNG 6.0.&lt;/b&gt; It\'s nice to meet you.</string>
+    <string name="welcome">Stay updated with BritoBot; Your personal HNG6.0 news curator!</string>
+    <string name="action_about">About</string>
+    <string name="action_exit">Back to Start</string>
+    <string name="action_feedback">Feedback</string>
 </resources>

@@ -2,7 +2,9 @@ package com.britomartis.android.britobudget
 
 import android.os.Bundle
 import android.text.format.DateUtils
+import android.util.Log
 import android.view.View
+import android.widget.PopupMenu
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -72,6 +74,25 @@ class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
                 }
             }
         })
+
+        more_button.setOnClickListener {
+            val popup = PopupMenu(this, it)
+            popup.menuInflater.inflate(R.menu.chat_menu_more, popup.menu)
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.action_about -> {
+                        Log.d(TAG, "ABOUT")
+                        true
+                    }
+                    R.id.action_feedback -> {
+                        Log.d(TAG, "FEEDBACK")
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popup.show()
+        }
     }
 
     override fun scrolledFarEnough(hasScrolledFarEnough: Boolean) {
