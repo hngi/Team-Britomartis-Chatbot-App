@@ -2,12 +2,12 @@ package com.britomartis.android.britobudget
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_start.*
 
@@ -41,20 +41,15 @@ class StartActivity : AppCompatActivity() {
 
 
         feedbackcard.setOnClickListener {
-            val intent = Intent().apply {
-                action = Intent.ACTION_SEND
-                data = Uri.parse("mailto:")
-                type = "text/plain"
-                putExtra(Intent.EXTRA_EMAIL, "teambritomartis@gmail.com")
-                putExtra(Intent.EXTRA_SUBJECT, "FeedBack from BritoBot User")
+            val i = Intent(Intent.ACTION_SEND)
+            i.type = "message/rfc822"
+            i.putExtra(Intent.EXTRA_EMAIL, arrayOf("teambritomartis@gmail.com"))
+            i.putExtra(Intent.EXTRA_SUBJECT, "FeedBack from BritoBot User")
+            try {
+                startActivity(Intent.createChooser(i, "Send mail..."))
+            } catch (ex: android.content.ActivityNotFoundException) {
+                Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show()
             }
-            if (intent.resolveActivity(packageManager) != null) {
-                intent.setPackage("com.google.android.gm")
-                startActivity(intent)
-            } else {
-                Log.d(TAG, "No app available to send email.")
-            }
-
         }
 
         chatbotcard.setOnClickListener {
@@ -70,7 +65,7 @@ class StartActivity : AppCompatActivity() {
 
     }
 
-    fun getMainActivityIntent(): Intent {
+    private fun getMainActivityIntent(): Intent {
         return Intent(this, MainActivity::class.java)
     }
 

@@ -1,10 +1,13 @@
 package com.britomartis.android.britobudget
 
+import android.content.Intent
+import android.content.Intent.*
 import android.os.Bundle
 import android.text.format.DateUtils
 import android.util.Log
 import android.view.View
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -15,6 +18,7 @@ import com.britomartis.android.britobudget.utils.Injector
 import com.britomartis.android.britobudget.utils.convertTimeLongToDateString
 import com.britomartis.android.britobudget.viewmodels.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
 
@@ -32,8 +36,6 @@ class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
         chat_recyclerview.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         chat_recyclerview.adapter = chatAdapter
         chat_recyclerview.setHasFixedSize(true)
-
-        fab_quickdown.visibility = View.GONE
 
         // Observe the list of messages
         viewModel.messageLiveList.observe(this, Observer {
@@ -86,6 +88,7 @@ class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
                     }
                     R.id.action_feedback -> {
                         Log.d(TAG, "FEEDBACK")
+                        launchFeedback()
                         true
                     }
                     else -> false
@@ -93,6 +96,19 @@ class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
             }
             popup.show()
         }
+    }
+
+    private fun launchFeedback() {
+        val i = Intent(ACTION_SEND)
+        i.type = "message/rfc822"
+        i.putExtra(EXTRA_EMAIL, arrayOf("teambritomartis@gmail.com"))
+        i.putExtra(EXTRA_SUBJECT, "FeedBack from BritoBot User")
+        try {
+            startActivity(Intent.createChooser(i, "Send mail..."))
+        } catch (ex: android.content.ActivityNotFoundException) {
+            Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     override fun scrolledFarEnough(hasScrolledFarEnough: Boolean) {
