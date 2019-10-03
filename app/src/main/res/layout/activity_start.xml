@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@android:color/white"
+    android:orientation="vertical"
     tools:context=".StartActivity">
 
     <com.google.android.material.chip.Chip
@@ -56,9 +56,9 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            android:elevation="5dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
+            android:elevation="5dp"
             android:focusable="true"
             app:cardCornerRadius="5dp">
 
@@ -130,9 +130,9 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            android:elevation="5dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
+            android:elevation="5dp"
             android:focusable="true"
             app:cardCornerRadius="5dp">
 
@@ -208,11 +208,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:gravity="center"
-        android:text="@string/welcome"
         android:padding="16dp"
+        android:text="@string/welcome"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

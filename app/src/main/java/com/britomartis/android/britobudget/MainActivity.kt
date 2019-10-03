@@ -84,6 +84,7 @@ class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
                 when (item.itemId) {
                     R.id.action_about -> {
                         Log.d(TAG, "ABOUT")
+                        launchAbout()
                         true
                     }
                     R.id.action_feedback -> {
@@ -96,6 +97,10 @@ class MainActivity : AppCompatActivity(), ChatAdapter.ScrolledFarEnough {
             }
             popup.show()
         }
+    }
+
+    private fun launchAbout() {
+        startActivity(Intent(this, AboutActivity::class.java))
     }
 
     private fun launchFeedback() {

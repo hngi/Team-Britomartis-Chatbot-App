@@ -2,6 +2,10 @@
     <string name="app_name">BritoBot</string>
     <string name="action_settings">Settings</string>
     <string name="type_here">Type a message here</string>
+    <string name="britomartis">Britomartis</string>
+    <string name="chatbot">Chatbot</string>
+    <string name="about">About</string>
+    <string name="about_text">BritoBot is an android chatbot which has been to design to interact with the user,it is user friendly and will be there to assist the user to get familiar with the chatbot app \n\n  Consider using your name to personalize this application as your own app for smooth interaction.</string>
     <string name="no_response_from_bot">Sorry, I could not understand that</string>
     <string name="no_network">Oops! I can\'t connect to the internet, Please check your connection.</string>
     <string name="username_pref_key">USERNAME_PREF_KEY</string>

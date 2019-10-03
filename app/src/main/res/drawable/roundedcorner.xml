@@ -6,16 +6,19 @@
         android:startColor="#555994"
         android:type="linear" />
 
-    <stroke android:width="0dp"
+    <stroke
+        android:width="0dp"
         android:color="#ff000000" />
 
-    <padding android:left="1dp"
-        android:top="1dp"
+    <padding
+        android:bottom="1dp"
+        android:left="1dp"
         android:right="1dp"
-        android:bottom="1dp" />
+        android:top="1dp" />
 
-    <corners android:bottomRightRadius="5dp"
+    <corners
         android:bottomLeftRadius="5dp"
+        android:bottomRightRadius="5dp"
         android:topLeftRadius="5dp"
         android:topRightRadius="5dp" />
 </shape>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/two_way_color"
+    tools:context=".AboutActivity">
+
+    <ImageView
+        android:id="@+id/chat_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:tint="@android:color/white"
+        android:src="@drawable/chatbot_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/about_page_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="@+id/chat_icon"
+        app:layout_constraintStart_toStartOf="@+id/chat_icon"
+        app:layout_constraintTop_toBottomOf="@+id/chat_icon" />
+
+    <TextView
+        android:id="@+id/about_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/britomartis"
+        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        app:layout_constraintEnd_toEndOf="@+id/about_page_title"
+        app:layout_constraintStart_toStartOf="@+id/about_page_title"
+        app:layout_constraintTop_toBottomOf="@+id/about_page_title" />
+
+    <LinearLayout
+        android:id="@+id/layout_vertical_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/white_background"
+        android:orientation="vertical"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_subtitle">
+
+        <TextView
+            android:id="@+id/btn_about"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/blue_round_background"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/about"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:lineSpacingExtra="12dp"
+            android:text="@string/about_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
